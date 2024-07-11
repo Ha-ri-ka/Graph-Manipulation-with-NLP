@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Label Input</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="text-center">Delete Node</h2>
+                <form action="/deleteNode" method="POST">
+                    <div class="form-group">
+                        <label>Choose deletion method</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="deleteOption" id="deleteByLabel" value="label" checked>
+                            <label class="form-check-label" for="deleteByLabel">
+                                Delete by Label
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="deleteOption" id="deleteByProp" value="property">
+                            <label class="form-check-label" for="deleteByProp">
+                                Delete by property
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="labelInput">Node Label</label>
+                        <input type="text" class="form-control" id="labelInput" name="label" placeholder="Enter label">
+                    </div>
+                    <div class="form-group">
+                        <label for="propInput">Node Property</label>
+                        <input type="text" class="form-control" id="propInput" name="prop" placeholder="Enter property" disabled>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () //implement JS after entire content is loaded
+        {
+            const deleteByLabelRadio = document.getElementById('deleteByLabel');
+            const deleteByParamRadio = document.getElementById('deleteByProp');
+            const labelInput = document.getElementById('labelInput');
+            const propInput = document.getElementById('propInput');
+
+            deleteByLabelRadio.addEventListener('change', function () { //change is an event
+                if (this.checked) {
+                    labelInput.disabled = false;
+                    propInput.disabled = true;
+                }
+            });
+
+            deleteByParamRadio.addEventListener('change', function () {
+                if (this.checked) {
+                    labelInput.disabled = true;
+                    propInput.disabled = false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

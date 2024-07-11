@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completed Action</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn-back {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4">Completed Action</h2>
+        
+        <p class="mb-4">Performed action: <strong>{{ action }}</strong></p>
+
+        <form action="/" class="mb-3">
+            <button type="submit" class="btn btn-primary btn-back">Back to Editing</button>
+        </form>
+
+        <form action="https://ce2921cdd05d4715917273527525cccb.neo4jsandbox.com/browser/?preselectAuthMethod=SSO&connectURL=ce2921cdd05d4715917273527525cccb.bolt.neo4jsandbox.com%3A443" target="_blank">
+            <button type="submit" class="btn btn-success">View Graph</button>
+        </form>
+    </div>
+
+</body>
+</html>
